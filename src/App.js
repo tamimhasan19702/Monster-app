@@ -6,14 +6,14 @@ class App extends React.Component {
     super();
 
     this.state = {
-      Monstars: []
+      monsters: []
     }
   }
 
   componentDidMount(){
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
-    .then(users => this.setState({ Monstars: users}));
+    .then(users => this.setState({ monsters: users}));
   }
 
 
@@ -21,9 +21,7 @@ class App extends React.Component {
   render(){
      return(
        <div className="App">
-        <CardList name="Tamim">  
-       {this.state.Monstars.map(mon => <h1 key={mon.id}> { mon.name } </h1>)}
-        </CardList>
+        <CardList monsters={this.state.monsters} />  
        </div>
      )
   }
