@@ -1,18 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 import '../src/App.css';
-import logo from './App.css';
 
-class App extends Component {
+class App extends React.Component {
   constructor (){
     super();
 
     this.state = {
-      Monstars: [
-        { name: 'Frankestine'},
-        { name: 'Dracula'},
-        { name: 'Zombie'},
-      ]
+      Monstars: []
     }
+  }
+
+  componentDidMount(){
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(users => this.setState({ Monstars: users}));
   }
 
 
@@ -20,7 +21,7 @@ class App extends Component {
   render(){
      return(
        <div className="App">
-      
+       {this.state.Monstars.map(mon => <h1 key={mon.id}> { mon.name } </h1>)}
        </div>
      )
   }
