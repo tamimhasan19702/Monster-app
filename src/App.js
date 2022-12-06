@@ -21,6 +21,11 @@ class App extends React.Component {
   render(){
      return(
        <div className="App">
+        <input 
+        type="Search" 
+        placeholder="Search monsters" 
+        onChange={e => this.setState({ searchField: e.target.value}, () => console.log(this.state))}
+        />
         <CardList monsters={this.state.monsters} />  
        </div>
      )
