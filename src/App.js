@@ -1,6 +1,6 @@
 import React from "react";
 import '../src/App.css';
-
+import CardList from "./Components/CardLlist/CardList.component";
 class App extends React.Component {
   constructor (){
     super();
@@ -21,6 +21,8 @@ class App extends React.Component {
   render(){
      return(
        <div className="App">
+        <CardList name="Tamim"/>
+        hello
        {this.state.Monstars.map(mon => <h1 key={mon.id}> { mon.name } </h1>)}
        </div>
      )
