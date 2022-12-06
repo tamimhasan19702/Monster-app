@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './cardList.style.css';
 
 function CardList(Props) {
   return (
-    <div>
-      <h1>Heloooooooo {Props.name}</h1>
+    <div className='card-list'>
+      {Props.children}
     </div>
   )
 }
