@@ -5,7 +5,7 @@ function CardComponent(Props) {
   return (
     <div className='card-container'>
       <img src={`https://robohash.org/${Props.monster.id}set=set1&size=180*180`} alt="monster" />
-      <h1>{Props.monster.name}</h1>
+      <h2>{Props.monster.name}</h2>
       <p>{Props.monster.email}</p>
     </div>
   )
