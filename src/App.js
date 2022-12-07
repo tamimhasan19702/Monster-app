@@ -19,6 +19,11 @@ class App extends React.Component {
 
 
   render(){
+
+    const { monsters, searchField } = this.state;
+    // const monsters = this.state.monsters;
+    // const searchField = this.state.searchField;
+
      return(
        <div className="App">
         <input 
